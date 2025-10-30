@@ -11,10 +11,11 @@ require "faker"
 
 10.times do 
   Product.create(
-    name:
-    price: 
-    image_url:
-    description:
-    seller:
+    name: Faker::Appliance.equipment,
+    price: Faker::Commerce.price,
+    image_url: Faker::LoremFlickr.image(search_terms: ['appliance']),
+    description: Faker::Lorem.paragraph(sentence_count: 6),
+    seller: Faker::Company.name
   )
 end
+puts "Creating Products..."
