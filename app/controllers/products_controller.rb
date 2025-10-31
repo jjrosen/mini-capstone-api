@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
-  def one_product
-    @product = Product.find(1)
-    render json: "products/show"
+  def show
+    @product = Product.find(params["id"])
+
+    render template: "products/show"
   end
 
-  def all_products
+  def index
     @products = Product.all
-    render json: "products/index"
+    render template: "products/index"
   end 
 end
