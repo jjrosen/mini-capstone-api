@@ -1,3 +1,4 @@
+require "faker"
 class ProductsController < ApplicationController
   def show
     @product = Product.find(params["id"])
@@ -11,13 +12,15 @@ class ProductsController < ApplicationController
   end
   
   def create
-    @product = Poduct.create(
-      name: Faker::Appliance.equipment,
+    @product = Product.create(
+     name: Faker::Appliance.equipment,
     price: Faker::Commerce.price,
     image_url: Faker::LoremFlickr.image(search_terms: ['appliance']),
     description: Faker::Lorem.paragraph(sentence_count: 6),
     seller: Faker::Company.name
     )
+
+    render template: "products/show"
   end
 
 end
