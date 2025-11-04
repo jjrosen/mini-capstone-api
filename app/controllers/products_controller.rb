@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
   def show
-    @product = Product.find(params["id"])
+    @product = Product.find(params[:id])
 
-    render template: "products/show"
+    render :show
   end
 
   def index
     @products = Product.all
-    render template: "products/index"
+    render :index
   end
   
   def create
@@ -19,7 +19,34 @@ class ProductsController < ApplicationController
     seller: params[:seller]
     )
 
-    render template: "products/show"
+    render :show
   end
+
+def update
+  @product = Product.find(params[:id])
+  
+  Product.update(
+    name: params[:name]|| @product.name
+    price: params[:price]|| @product.price
+    image_url: params[:image_url]|| @product.image_url
+    description: params[:description]|| @product.description
+    seller: params[:seller] || @product.seller
+  )
+
+  render :show
+end
+
+def delete
+   @product = Product.find(params[:id])
+
+   @product.destroy
+
+   render json: {message: "Product Removed from Page"}
+end
+
+
+
+
+
 
 end
