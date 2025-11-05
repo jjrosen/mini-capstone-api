@@ -10,12 +10,24 @@ end
 
 def tax
   tax = price * 0.09 
- tax
+ "$#{tax}"
 end
 
 def total 
   total = price * 1.09
-   total
+   "$#{total.round(2)}"
 end
 
+def price_money_sign
+  "$#{price}"
+end
+
+def easy_created_at
+  created_at.strftime("%m/%d/%Y%l:%M %p")
+end
+
+def easy_updated_at
+  updated_at.strftime("%m/%d/%Y%l:%M %p")
+
+end
 end
