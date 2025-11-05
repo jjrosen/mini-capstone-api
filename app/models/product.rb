@@ -9,12 +9,12 @@ def is_discounted
 end
 
 def tax
-  tax = price * 0.09 
- "$#{tax}"
+  @tax = price * 0.09 
+ "$#{@tax.round(2)}"
 end
 
 def total 
-  total = price * 1.09
+  total = price + @tax
    "$#{total.round(2)}"
 end
 
