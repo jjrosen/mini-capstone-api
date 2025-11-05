@@ -26,10 +26,10 @@ def update
   @product = Product.find(params[:id])
   
   Product.update(
-    name: params[:name]|| @product.name
-    price: params[:price]|| @product.price
-    image_url: params[:image_url]|| @product.image_url
-    description: params[:description]|| @product.description
+    name: params[:name]|| @product.name,
+    price: params[:price]|| @product.price,
+    image_url: params[:image_url]|| @product.image_url,
+    description: params[:description]|| @product.description,
     seller: params[:seller] || @product.seller
   )
 
