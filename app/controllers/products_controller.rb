@@ -16,10 +16,12 @@ class ProductsController < ApplicationController
     price: params[:price],
     image_url: params[:image_url],
     description: params[:description],
-    seller: params[:seller]
+    seller: params[:seller],
+    inventory: params[:inventory]
     )
+
     if @product.save
-      render :show
+      render :show, status: :created
     else
       render json: {errors: @product.errors}, status: :unprocessable_entity
     end

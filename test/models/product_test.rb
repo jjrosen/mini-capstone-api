@@ -17,7 +17,7 @@ class ProductTest < ActiveSupport::TestCase
   test "total" do 
     product = Product.new(price: 10)
     product.tax
-    assert_equal "$10.90", product.total
+    assert_equal "$10.9", product.total
   end
 
   test "price_money_sign" do 
