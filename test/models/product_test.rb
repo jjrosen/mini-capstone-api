@@ -1,5 +1,7 @@
 require "test_helper"
 
+
+
 class ProductTest < ActiveSupport::TestCase
 
   test "is_discounted" do 

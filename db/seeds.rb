@@ -1,21 +1,20 @@
-require "faker"
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
-10.times do 
-  Product.create(
-    name: Faker::Appliance.equipment,
-    price: Faker::Commerce.price,
-    image_url: Faker::LoremFlickr.image(search_terms: ['appliance']),
-    description: Faker::Lorem.paragraph(sentence_count: 6),
-    seller: Faker::Company.name
-  )
-end
-puts "Creating Products..."
+Product.create!([
+  {name: "Refrigerator", price: 58, image_url: "https://loremflickr.com/300/300/appliance", description: "Ut et quis. Odit iste occaecati. Fugit aliquam aspernatur. Debitis repellendus ipsum. Rerum quia quisquam. Ut expedita doloribus.", seller: "Von Group", inventory: nil},
+  {name: "HVAC", price: 44, image_url: "https://loremflickr.com/300/300/appliance", description: "Dolores repellat et. Ad doloribus excepturi. Omnis ut sint. Deserunt vel est. Sit non nostrum. Aspernatur consequatur eos.", seller: "Jacobs, Renner and Cummings", inventory: nil},
+  {name: "Drawer dishwasher", price: 93, image_url: "https://loremflickr.com/300/300/appliance", description: "Est qui aut. Non at minus. Similique dolor iste. Suscipit ut delectus. Modi inventore aut. Aut voluptates et.", seller: "Bogan LLC", inventory: nil},
+  {name: "Sewing machine", price: 58, image_url: "https://loremflickr.com/300/300/appliance", description: "Suscipit et nostrum. Cupiditate qui quasi. Ut eius ad. Nisi facere molestiae. Amet molestias numquam. Qui nostrum architecto.", seller: "Kohler-Marvin", inventory: nil},
+  {name: "Dishwasher", price: 73, image_url: "https://loremflickr.com/300/300/appliance", description: "Odio quae animi. Dolores eaque consequatur. Nostrum et omnis. Qui iste repellat. Minus qui facilis. Sapiente accusantium odit.", seller: "O'Conner, Franecki and Medhurst", inventory: nil},
+  {name: "Flame supervision device", price: 74, image_url: "https://loremflickr.com/300/300/appliance", description: "Sapiente earum totam. Accusamus aut omnis. Dignissimos eaque placeat. Nihil modi non. Ducimus non quisquam. Tempore laborum impedit.", seller: "Stamm, Zulauf and Nienow", inventory: nil},
+  {name: "Back boiler", price: 31, image_url: "https://loremflickr.com/300/300/appliance", description: "Aspernatur deserunt et. Qui qui perspiciatis. Natus suscipit officiis. Non et aut. In id rerum. Officia nam et.", seller: "Bosco-Batz", inventory: nil},
+  {name: "Kimchi refrigerator", price: 35, image_url: "https://loremflickr.com/300/300/appliance", description: "Dolorem qui voluptatum. Odit iure aperiam. Consequatur earum unde. In nam at. Debitis beatae velit. Commodi dignissimos aut.", seller: "Leuschke-DuBuque", inventory: nil},
+  {name: "Flame supervision device", price: 78, image_url: "https://loremflickr.com/300/300/appliance", description: "Quo sunt aut. Voluptas sunt atque. Nemo est nisi. Excepturi quia qui. Veritatis architecto blanditiis. Sunt rerum quisquam.", seller: "Labadie-Casper", inventory: nil},
+  {name: "Air ioniser", price: 73, image_url: "https://loremflickr.com/300/300/appliance", description: "Aliquam illum soluta. Fugit tempore tempora. Aut expedita minus. Sequi aspernatur et. Placeat dolorum dolorem. Deserunt reiciendis eveniet.", seller: "Cartwright-Nikolaus", inventory: nil},
+  {name: "Trouser press", price: 21, image_url: "https://loremflickr.com/300/300/appliance", description: "Aut aperiam ut. Inventore qui voluptatem. Aliquid praesentium ratione. Id recusandae vitae. Et officia voluptate. Rerum unde voluptatem.", seller: "Tromp Inc", inventory: nil},
+  {name: "Oven", price: 89, image_url: "https://loremflickr.com/300/300/appliance", description: "Dolor ut sed. Modi quo mollitia. Voluptas aperiam reprehenderit. Et reiciendis cumque. Accusamus excepturi fugit. Ut cupiditate aut.", seller: "Larson LLC", inventory: nil},
+  {name: "Domestic robot", price: 39, image_url: "https://loremflickr.com/300/300/appliance", description: "Est ex deleniti. Cum aut et. Doloribus optio voluptas. Vero sequi impedit. Modi iure quidem. Inventore dolores ad.", seller: "Weimann Group", inventory: nil},
+  {name: "Paper shredder", price: 54, image_url: "https://loremflickr.com/300/300/appliance", description: "Est accusamus ut. Quis ipsam qui. Totam ab illum. Accusantium sequi in. Quidem voluptatum sed. Voluptatem et quaerat.", seller: "Kovacek, Marquardt and Mills", inventory: nil},
+  {name: "Bed", price: 899, image_url: "picture.com", description: "A comfy place to sleep", seller: "Josh Rosen", inventory: nil},
+  {name: "Bed", price: 899, image_url: "picture.com", description: "A comfy place to sleep", seller: "Josh Rosen", inventory: nil},
+  {name: "Exhaust hood", price: 70, image_url: "https://loremflickr.com/300/300/appliance", description: "Necessitatibus eius exercitationem. Qui earum debitis. Perferendis aperiam nihil. Ab molestias cupiditate. Molestiae ex qui. Odio quis perspiciatis.", seller: "Okuneva LLC", inventory: nil},
+  {name: "Oven", price: 799, image_url: "image.com", description: "Brand new, never used, black, self-cleaning", seller: "Samsung", inventory: nil}
+])
