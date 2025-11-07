@@ -18,6 +18,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 #used to add fake data to test 
 gem "faker"
+#populate the seed file
+gem "seed_dump"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
