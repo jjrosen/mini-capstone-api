@@ -14,10 +14,11 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal "$0.9", product.tax
   end
 
-  # test "total" do 
-  #   product = Product.new(price: 10)
-  #   assert_equal "$10.90", product.total
-  # end
+  test "total" do 
+    product = Product.new(price: 10)
+    product.tax
+    assert_equal "$10.90", product.total
+  end
 
   test "price_money_sign" do 
     product = Product.new(price: 10)
