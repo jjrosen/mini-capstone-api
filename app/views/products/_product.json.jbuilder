@@ -10,3 +10,4 @@ json.tax product.tax
 json.total product.total
 json.easy_created_at product.easy_created_at
 json.easy_updated_at product.easy_updated_at
+json.supplier product.supplier

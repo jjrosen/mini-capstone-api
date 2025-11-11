@@ -12,6 +12,10 @@ class Product < ApplicationRecord
     end
   end
 
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
+
   def tax
     @tax = price * 0.09 
   "$#{@tax.round(2)}"
