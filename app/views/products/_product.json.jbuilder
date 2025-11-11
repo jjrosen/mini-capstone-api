@@ -4,7 +4,7 @@ json.image_url  product.image_url
 json.price  product.price_money_sign
 json.inventory product.inventory
 json.description  product.description
-json.seller  product.seller
+json.supplier_id  product.supplier_id
 json.is_discounted product.is_discounted
 json.tax product.tax
 json.total product.total

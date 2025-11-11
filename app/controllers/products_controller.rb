@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     price: params[:price],
     image_url: params[:image_url],
     description: params[:description],
-    seller: params[:seller],
+    supplier_id: params[:supplier_id],
     inventory: params[:inventory]
     )
 
@@ -35,7 +35,7 @@ def update
     price: params[:price]|| @product.price,
     image_url: params[:image_url]|| @product.image_url,
     description: params[:description]|| @product.description,
-    seller: params[:seller] || @product.seller
+    supplier_id: params[:supplier_id] || @product.supplier_id
   )
 
   render :show
