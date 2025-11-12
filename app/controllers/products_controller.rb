@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 def update
   @product = Product.find(params[:id])
   
-  Product.update(
+  @product.update(
     name: params[:name]|| @product.name,
     price: params[:price]|| @product.price,
     image_url: params[:image_url]|| @product.image_url,
@@ -38,7 +38,11 @@ def update
     supplier_id: params[:supplier_id] || @product.supplier_id
   )
 
-  render :show
+  if @product.valid?
+    render :show 
+  else
+    render json: {errors: @product.errors}, status: :unprocessable_entity
+  end
 end
 
 def delete

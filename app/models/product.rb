@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
-
+ belongs_to :supplier
   validates :name, presence: true
-  validates :inventory, presence: true
+  # validates :inventory, presence: true
   validates :price, numericality: { greater_than: 0}
 
   def is_discounted
@@ -10,10 +10,6 @@ class Product < ApplicationRecord
     else
       false
     end
-  end
-
-  def supplier
-    Supplier.find_by(id: supplier_id)
   end
 
   def tax

@@ -15,12 +15,18 @@ Rails.application.routes.draw do
   get "/products/:id" => "products#show"
   get "/products" => "products#index"
   post "/products" => "products#create"
+  put "/products/:id" => "products#update"
+  delete "/products/:id" => "products#delete"
 
 
   #supplier routes
   get "suppliers/:id" => "suppliers#show"
   get "suppliers" => "suppliers#index"
-
-
+  post "/suppliers" =>
+  "suppliers#create"
+  put "/suppliers/:id" =>
+  "suppliers#update"
+  delete "/suppliers/:id" =>
+  "suppliers#delete"
 
 end
